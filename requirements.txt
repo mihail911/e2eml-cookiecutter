@@ -1,0 +1,2 @@
+cookiecutter==1.7.2
+pip-chill==1.0.1

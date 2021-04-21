@@ -1,0 +1,7 @@
+{
+    "project_name": "Default_Project",
+    "description": "this is a default project description",
+    "author_name": "Your Name",
+    "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+    "open_source_license": ["MIT", "BSD", "ISCL", "Apache Software License 2.0", "Not open source"]
+}
