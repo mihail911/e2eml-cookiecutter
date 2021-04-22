@@ -3,67 +3,64 @@
 _A logical, reasonably standardized, but flexible project structure for doing and sharing machine learning work._
 
 
-### Requirements to use the cookiecutter template:
+### Requirements
 -----------
- - Python 2.7 or 3.5+
- - [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html) >= 1.4.0: This can be installed with pip by or conda depending on how you manage your Python packages:
 
+Note: template tested on Python 3.8
+
+Run:
 ``` bash
 $ pip install requirements.txt
 ```
 
-or
-
-
-### To start a new project, run:
+### Starting a New Project
 ------------
+Run:
 
-    cookiecutter -c v1 https://github.com/drivendata/cookiecutter-data-science
+    cookiecutter https://github.com/mihail911/e2eml-cookiecutter
 
 
-### The resulting directory structure
+### Resulting directory structure
 ------------
 
 The directory structure of your new project looks like this:
 
 ```
 ├── LICENSE
-├── README.md          <- The top-level README for developers using this project.
-├── data
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
-│
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
-│
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
+├── README.md          <- The top-level README for this project
 │
 ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
 │                         generated with `pip freeze > requirements.txt`
 │
-├── src                <- Source code for use in this project.
-│   ├── __init__.py    <- Makes src a Python module
+├── assets             <- Stores any images, PDFs, or other static assets
+│ 
+├── data
+│   ├── processed      <- The final, processed data sets for modeling
+│   └── raw            <- The original, immutable data dump
+│
+├── deploy             <- Stores any files, configurations related to deploying your model (Dockerfile, etc.)
+│ 
+├── model_checkpoints  <- Trained and serialized models, model predictions, model summaries, config files
+│
+├── notebooks          <- Jupyter notebooks for doing exploratory data analysis, analyzing model outputs, etc.
+│
+├── scripts            <- Single-purpose scripts for functionality such as processing and cleaning data
+│
+├── tests              <- Tests for the various aspects of the project (data cleanliness, data processing, model training code, etc.)
+│
+├── {{cookiecutter.repo_name}}     <- Source code for use in this project
+│   ├── __init__.py    <- Makes {{cookiecutter.repo_name}} a Python module
 │   │
-│   ├── data           <- Scripts to download or generate data
-│   │   └── make_dataset.py
+│   ├── model          <- Stores any relevant modeling code, interfaces, and definitions
+│   │   └── __init__.py
 │   │
-│   ├── features       <- Scripts to turn raw data into features for modeling
-│   │   └── build_features.py
+│   ├── server         <- Stores deployment and inference server code
+│   │   ├── __init__.py
+│   │   └── main.py    <- Main module for running server
 │   │
-│   ├── models         <- Scripts to train models and then use trained models to make
-│   │   │                 predictions
-│   │   ├── predict_model.py
-│   │   └── train_model.py
+│   ├── utils          <- Stores various utilities used in project 
+│   │   ├── __init__.py
 │   │
-│   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-│       └── visualize.py
+│   ├── train.py       <- Script to run model training
+│   └── eval.py        <- Script to run trained model evaluation 
 ```
-
-### Installing requirements
-------------
-
-    pip install -r requirements.txt
